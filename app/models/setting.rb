@@ -8,7 +8,7 @@ class Setting < ApplicationRecord
   end
 
   def type
-    if %w[feature process proposals map html homepage uploads sdg machine_learning].include? prefix
+    if %w[feature locales process proposals map html homepage uploads sdg machine_learning].include? prefix
       prefix
     elsif %w[remote_census].include? prefix
       key.rpartition(".").first
@@ -110,6 +110,7 @@ class Setting < ApplicationRecord
         "html.per_page_code_body": "",
         # Code to be included at the top (inside <head>) of every page (useful for tracking)
         "html.per_page_code_head": "",
+        "locales.available": nil,
         "map.latitude": 51.48,
         "map.longitude": 0.0,
         "map.zoom": 10,
@@ -232,6 +233,14 @@ class Setting < ApplicationRecord
 
     def archived_proposals_date_limit
       Setting["months_to_archive_proposals"].to_i.months.ago
+    end
+
+    def available_locales
+      if Setting["locales.available"].present?
+        Setting["locales.available"].split(",").map(&:strip).map(&:to_sym) & I18n.available_locales
+      else
+        I18n.available_locales
+      end
     end
   end
 end
