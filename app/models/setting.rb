@@ -100,6 +100,7 @@ class Setting < ApplicationRecord
         "map.latitude": Config.new(51.48, group: :map),
         "map.longitude": Config.new(0.0, group: :map),
         "map.zoom": Config.new(10, group: :map),
+        "map.marker_clustering": Config.new(false, type: :feature, group: :map),
         "process.debates": Config.new(true, type: :feature, group: :processes),
         "process.proposals": Config.new(true, type: :feature, group: :processes),
         "process.polls": Config.new(true, type: :feature, group: :processes),
