@@ -475,12 +475,29 @@ describe Poll do
       expect(Poll.sort_for_list).to eq [poll3, poll2, poll1]
     end
 
+    it "returns expired polls sorted by name ASC" do
+      ends_at = 1.day.ago
+      poll1 = create(:poll, geozone_restricted: true, ends_at: ends_at, name: "Zzz...")
+      poll2 = create(:poll, geozone_restricted: true, ends_at: ends_at, name: "Mmmm...")
+      poll3 = create(:poll, geozone_restricted: true, ends_at: ends_at, name: "Aaaaah!")
+
+      expect(Poll.sort_for_list).to eq [poll3, poll2, poll1]
+    end
+
     it "returns not geozone restricted polls first" do
       starts_at = 1.day.from_now
       poll1 = create(:poll, geozone_restricted: false, starts_at: starts_at, name: "Zzz...")
       poll2 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Aaaaaah!")
 
       expect(Poll.sort_for_list).to eq [poll1, poll2]
+    end
+
+    it "returns not geozone restricted for expired polls first" do
+      ends_at = 1.day.ago
+      poll1 = create(:poll, geozone_restricted: true, ends_at: ends_at, name: "Aaaaaah!")
+      poll2 = create(:poll, geozone_restricted: false, ends_at: ends_at, name: "Zzz...")
+
+      expect(Poll.sort_for_list).to eq [poll2, poll1]
     end
 
     it "returns polls for the user's geozone first" do
@@ -502,6 +519,14 @@ describe Poll do
       poll2 = create(:poll, geozone_restricted: false, starts_at: starts_at, name: "Aaaaah!")
 
       expect(Poll.sort_for_list).to eq [poll1, poll2]
+    end
+
+    it "returns expired polls earlier to end first" do
+      ends_at = 1.day.ago
+      poll1 = create(:poll, geozone_restricted: false, ends_at: ends_at - 1.hour, name: "Aaaaah!")
+      poll2 = create(:poll, geozone_restricted: false, ends_at: ends_at, name: "Zzz...")
+
+      expect(Poll.sort_for_list).to eq [poll2, poll1]
     end
 
     it "returns polls with multiple translations only once" do
