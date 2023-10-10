@@ -18,6 +18,16 @@ describe Widget::Card do
       expect(build(:widget_card, title: "")).not_to be_valid
     end
 
+    describe "order" do
+      it "is not valid without a order" do
+        expect(build(:widget_card, order: nil)).not_to be_valid
+      end
+
+      it "is not valid with a order less than 1" do
+        expect(build(:widget_card, order: 0)).not_to be_valid
+      end
+    end
+
     context "regular cards" do
       it "is not valid without a link_url" do
         card = build(:widget_card, header: false, link_url: nil)
