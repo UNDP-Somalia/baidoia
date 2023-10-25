@@ -11,7 +11,7 @@ class Admin::Widget::Cards::NewComponent < ApplicationComponent
   private
 
     def title
-      if card.header?
+      if card.header? || params[:controller] == "sdg_management/header"
         t("admin.homepage.new.header_title")
       else
         t("admin.homepage.new.card_title")
