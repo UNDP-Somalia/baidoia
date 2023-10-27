@@ -11,7 +11,8 @@
 
   <%= render Admin::Widget::Cards::TableComponent.new(
     @header,
-    no_cards_message: t("admin.homepage.no_header")
+    no_cards_message: t("admin.homepage.no_header"),
+    header_section: true
   ) %>
 </div>
 
