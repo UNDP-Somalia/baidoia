@@ -2,20 +2,22 @@ require "rails_helper"
 
 describe InstallationController, type: :request do
   describe "consul.json" do
-    let(:test_process_settings) do
+    let(:output) do
       {
-        "disabled_process" => nil,
-        "enabled_process" => "t"
+        "debates" => nil,
+        "proposals" => "t",
+        "polls" => nil,
+        "budgets" => "t",
+        "legislation" => nil
       }
     end
 
-    let(:seeds_process_settings) { Setting.where("key LIKE 'process.%'") }
-
     before do
-      seeds_process_settings.destroy_all
-      test_process_settings.each do |feature_name, feature_value|
-        Setting["process.#{feature_name}"] = feature_value
-      end
+      Setting["process.debates"] = false
+      Setting["process.proposals"] = true
+      Setting["process.polls"] = false
+      Setting["process.budgets"] = true
+      Setting["process.legislation"] = false
     end
 
     specify "with query string inside query params" do
@@ -23,7 +25,7 @@ describe InstallationController, type: :request do
 
       expect(response).to have_http_status(:ok)
       expect(response.parsed_body["release"]).not_to be_empty
-      expect(response.parsed_body["features"]).to eq(test_process_settings)
+      expect(response.parsed_body["features"]).to eq(output)
     end
   end
 end
