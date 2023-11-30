@@ -2,3 +2,57 @@
 //
 // You can also create SCSS files in the app/assets/stylesheets/custom/
 // folder and they will be loaded automatically.
+
+/*
+HEADER
+*/
+
+header {
+  .top-links {
+    background: $black;
+  }
+}
+.top-bar {
+  background: $white !important;
+
+  h1 {
+    a img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0;
+
+      @include breakpoint(medium up) {
+        height: auto;
+        max-width: 600px;
+      }
+    }
+  }
+
+  .menu > li a {
+    color: #222;
+
+    @include breakpoint(small only) {
+      color: #222;
+      padding-left: 10px;
+    }
+  }
+  .menu > li .button {
+    background: $brand;
+    color: #fff;
+    @include breakpoint(small only) {
+      padding-left: 10px;
+    }
+  }
+}
+
+.auth-image {
+  padding: 0px;
+  border-right: 2px solid $brand;
+  background-color: $white;
+}
+
+.auth-image h1 {
+  padding: 1.5rem;
+  background-color: $white;
+  margin-top: 0px;
+}
