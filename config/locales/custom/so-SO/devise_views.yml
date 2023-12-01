@@ -1,0 +1,17 @@
+so:
+  devise_views:
+    users:
+      registrations:
+        new:
+          gender:
+            male: Lab
+            female: Dhedig
+          last_education_degree:
+            non: Maya
+            primary_elementary: Hoose
+            preparatory: Diyaarinta
+            secondary: Labaad
+            bachelor: Doob
+            diploma: Diblooma
+            masters: Sayid
+            phd: PhD

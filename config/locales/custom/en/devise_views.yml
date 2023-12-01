@@ -1,0 +1,20 @@
+en:
+  devise_views:
+    users:
+      registrations:
+        new:
+          gender:
+            male: Male
+            female: Female
+          gender_label: Gender
+          date_of_birth_label: Date of birth
+          last_education_degree:
+            non: Non
+            primary_elementary: Primary / Elementary
+            preparatory: Preparatory
+            secondary: Secondary
+            bachelor: Bachelor
+            diploma: Diploma
+            masters: Masters
+            phd: PhD
+          last_education_degree_label: Last education degree
