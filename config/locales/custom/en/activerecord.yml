@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        gender: Gender
+        date_of_birth: Date of birth
+        last_education_degree: Last education degree

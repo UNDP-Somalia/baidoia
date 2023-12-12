@@ -6,8 +6,6 @@ en:
           gender:
             male: Male
             female: Female
-          gender_label: Gender
-          date_of_birth_label: Date of birth
           last_education_degree:
             non: Non
             primary_elementary: Primary / Elementary
@@ -17,4 +15,3 @@ en:
             diploma: Diploma
             masters: Masters
             phd: PhD
-          last_education_degree_label: Last education degree
