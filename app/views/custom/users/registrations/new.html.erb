@@ -37,7 +37,24 @@
           [t("devise_views.users.registrations.new.last_education_degree.diploma"), 'diploma'],
           [t("devise_views.users.registrations.new.last_education_degree.masters"), 'masters'],
           [t("devise_views.users.registrations.new.last_education_degree.phd"), 'phd'],
+        ]), { include_blank: true }, label: t("devise_views.users.registrations.new.last_education_degree_label") %>
+
+      <%= f.select :city, options_for_select([
+          [t("devise_views.users.registrations.new.city.baidoia"), 'baidoia']
         ]), { include_blank: false }, label: t("devise_views.users.registrations.new.last_education_degree_label") %>
+
+      <%= f.select :village, options_for_select([
+          [t("devise_views.users.registrations.new.city.isha"), 'isha'],
+          [t("devise_views.users.registrations.new.city.darusalam"), 'darusalam'],
+          [t("devise_views.users.registrations.new.city.horseed"), 'horseed'],
+          [t("devise_views.users.registrations.new.city.berdale"), 'berdale'],
+          [t("devise_views.users.registrations.new.city.howl_wadaag"), 'howl_wadaag'],
+          [t("devise_views.users.registrations.new.city.wadajir"), 'wadajir'],
+          [t("devise_views.users.registrations.new.city.weberi"), 'weberi'],
+          [t("devise_views.users.registrations.new.city.salamey"), 'salamey'],
+          [t("devise_views.users.registrations.new.city.towfiiq"), 'towfiiq'],
+          [t("devise_views.users.registrations.new.city.adaado"), 'adaado'],
+        ]), { include_blank: true }, label: t("devise_views.users.registrations.new.last_education_degree_label") %>
 
       <%= f.password_field :password, autocomplete: "off" %>
 

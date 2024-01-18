@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_01_084047) do
+ActiveRecord::Schema.define(version: 2024_01_18_093931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1646,6 +1646,8 @@ ActiveRecord::Schema.define(version: 2023_12_01_084047) do
     t.boolean "recommended_proposals", default: true
     t.string "subscriptions_token"
     t.string "last_education_degree"
+    t.string "city"
+    t.string "village"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true

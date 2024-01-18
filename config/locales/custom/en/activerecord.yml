@@ -5,3 +5,5 @@ en:
         gender: Gender
         date_of_birth: Date of birth
         last_education_degree: Last education degree
+        city: City
+        village: Village
