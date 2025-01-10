@@ -23,38 +23,24 @@
       <%= f.invisible_captcha :address %>
 
       <%= f.email_field :email %>
-
-      <%= f.select :gender, options_for_select([[t("devise_views.users.registrations.new.gender.male"), 'male'],[t("devise_views.users.registrations.new.gender.female"), 'female']]), { include_blank: false } %>
+      
+      <% gender_options = User::GENDER.map { |g| [t("devise_views.users.registrations.new.gender.#{g}"), g] } %>
+      <%= f.select :gender,
+                   options_for_select(gender_options),
+                   label: t("devise_views.users.registrations.new.gender_label"),
+                   include_blank: true %>
 
       <%= f.date_field :date_of_birth %>
 
-       <%= f.select :last_education_degree, options_for_select([
-          [t("devise_views.users.registrations.new.last_education_degree.non"), 'non'],
-          [t("devise_views.users.registrations.new.last_education_degree.primary_elementary"), 'primary_elementary'],
-          [t("devise_views.users.registrations.new.last_education_degree.preparatory"), 'preparatory'],
-          [t("devise_views.users.registrations.new.last_education_degree.secondary"), 'secondary'],
-          [t("devise_views.users.registrations.new.last_education_degree.bachelor"), 'bachelor'],
-          [t("devise_views.users.registrations.new.last_education_degree.diploma"), 'diploma'],
-          [t("devise_views.users.registrations.new.last_education_degree.masters"), 'masters'],
-          [t("devise_views.users.registrations.new.last_education_degree.phd"), 'phd'],
-        ]), { include_blank: true }, label: t("devise_views.users.registrations.new.last_education_degree_label") %>
+      <% education_options = User::EDUCATION_LEVEL.map { |g| [t("devise_views.users.registrations.new.last_education_degree.#{g}"), g] } %>
+      <%= f.select :last_education_degree, options_for_select(education_options), include_blank: true, label: t("devise_views.users.registrations.new.last_education_degree_label") %>
 
       <%= f.select :city, options_for_select([
           [t("devise_views.users.registrations.new.city.baidoia"), 'baidoia']
-        ]), { include_blank: false }, label: t("devise_views.users.registrations.new.last_education_degree_label") %>
+        ]), include_blank: false, label: t("devise_views.users.registrations.new.city_label") %>
 
-      <%= f.select :village, options_for_select([
-          [t("devise_views.users.registrations.new.city.isha"), 'isha'],
-          [t("devise_views.users.registrations.new.city.darusalam"), 'darusalam'],
-          [t("devise_views.users.registrations.new.city.horseed"), 'horseed'],
-          [t("devise_views.users.registrations.new.city.berdale"), 'berdale'],
-          [t("devise_views.users.registrations.new.city.howl_wadaag"), 'howl_wadaag'],
-          [t("devise_views.users.registrations.new.city.wadajir"), 'wadajir'],
-          [t("devise_views.users.registrations.new.city.weberi"), 'weberi'],
-          [t("devise_views.users.registrations.new.city.salamey"), 'salamey'],
-          [t("devise_views.users.registrations.new.city.towfiiq"), 'towfiiq'],
-          [t("devise_views.users.registrations.new.city.adaado"), 'adaado'],
-        ]), { include_blank: true }, label: t("devise_views.users.registrations.new.last_education_degree_label") %>
+      <% village_options = User::VILLAGE.map { |g| [t("devise_views.users.registrations.new.village.#{g}"), g] } %>
+      <%= f.select :village, options_for_select(village_options), include_blank: true, label: t("devise_views.users.registrations.new.village_label") %>
 
       <%= f.password_field :password, autocomplete: "off" %>
 

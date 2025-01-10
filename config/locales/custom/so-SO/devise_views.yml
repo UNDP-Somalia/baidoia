@@ -3,9 +3,11 @@ so:
     users:
       registrations:
         new:
+          gender_label: "Jinsiga"
           gender:
             male: Lab
             female: Dhedig
+          last_education_degree_label: "Shahaado waxbarasho ee ugu dambeysay"
           last_education_degree:
             non: Maya
             primary_elementary: Hoose
@@ -15,8 +17,10 @@ so:
             diploma: Diblooma
             masters: Sayid
             phd: PhD
+          city_label: "Magaalada"
           city:
             baidoia: Baydhabo
+          village_label: "Degmada"
           village:
             isha: Isha
             darusalam: Darusalam

@@ -3,9 +3,11 @@ en:
     users:
       registrations:
         new:
+          gender_label: Gender
           gender:
             male: Male
             female: Female
+          last_education_degree_label: Last Education Degree
           last_education_degree:
             non: Non
             primary_elementary: Primary / Elementary
@@ -15,8 +17,10 @@ en:
             diploma: Diploma
             masters: Masters
             phd: PhD
+          city_label: City Name
           city:
             baidoia: Baidoia
+          village_label: Village Name
           village:
             isha: Isha
             darusalam: Darusalam
