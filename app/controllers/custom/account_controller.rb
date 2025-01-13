@@ -30,9 +30,9 @@ class AccountController < ApplicationController
         [:phone_number, :email_on_comment, :email_on_comment_reply, :newsletter,
          organization_attributes: [:name, :responsible_name]]
       else
-        [:username, :public_activity, :public_interests, :email_on_comment,
-        :email_on_comment_reply, :email_on_direct_message, :email_digest, :newsletter,
-        :official_position_badge, :recommended_debates, :recommended_proposals]
+        [:username, :gender, :date_of_birth, :last_education_degree, :city, :village, :public_activity, :public_interests, :email_on_comment,
+         :email_on_comment_reply, :email_on_direct_message, :email_digest, :newsletter,
+         :official_position_badge, :recommended_debates, :recommended_proposals]
       end
     end
 end

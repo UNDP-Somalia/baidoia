@@ -27,7 +27,27 @@
               <%= f.phone_field :phone_number %>
 
             <% else %>
+              <% puts @account.gender %>
               <%= f.text_field :username, maxlength: User.username_max_length %>
+                  
+      <% gender_options = User::GENDER.map { |g| [t("devise_views.users.registrations.new.gender.#{g}"), g] } %>
+      <%= f.select :gender,
+                   options_for_select(gender_options, @account.gender),
+                   label: t("devise_views.users.registrations.new.gender_label"),
+                   include_blank: true %>
+
+      <%= f.date_field :date_of_birth %>
+
+      <% education_options = User::EDUCATION_LEVEL.map { |g| [t("devise_views.users.registrations.new.last_education_degree.#{g}"), g] } %>
+      <%= f.select :last_education_degree, options_for_select(education_options, @account.last_education_degree), include_blank: true, label: t("devise_views.users.registrations.new.last_education_degree_label") %>
+
+      <%= f.select :city, options_for_select([
+          [t("devise_views.users.registrations.new.city.baidoia"), 'baidoia']
+        ]), include_blank: false, label: t("devise_views.users.registrations.new.city_label") %>
+
+      <% village_options = User::VILLAGE.map { |g| [t("devise_views.users.registrations.new.village.#{g}"), g] } %>
+      <%= f.select :village, options_for_select(village_options, @account.village), include_blank: true, label: t("devise_views.users.registrations.new.village_label") %>
+
             <% end %>
           </div>
 
