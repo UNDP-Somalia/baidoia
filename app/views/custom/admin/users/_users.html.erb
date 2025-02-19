@@ -33,7 +33,7 @@
             <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
             <td><%= user.email %></td>
             <td><%= user.document_number %></td>
-            <td><%= user.date_of_birth.strftime("%d/%m/%Y") %></td>
+            <td><%= user.date_of_birth.present? ? user.date_of_birth.strftime("%d/%m/%Y")  : "" %></td>
             <td><%= user.gender.present? ? t("devise_views.users.registrations.new.gender.#{user.gender}") : "" %></td>
             <td><%= user.last_education_degree.present? ? t("devise_views.users.registrations.new.last_education_degree.#{user.last_education_degree}") : "" %></td>
             <td><%= user.village.present? ? t("devise_views.users.registrations.new.village.#{user.village}") : "" %></td>
