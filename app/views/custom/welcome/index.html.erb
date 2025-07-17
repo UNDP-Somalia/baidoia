@@ -14,8 +14,9 @@
 <%= render "shared/header", header: @header %>
 
 <%= image_tag 'FARIIN-MAAL platform designs-03.png', style: "margin-top:-1.5rem" %>
-<div style="display:flex; flex-direction:row; justify-content: center; margin-top:2rem;">
-  <a class="button button-secondary" href="/proposals/new" style="background-color: #05acec; color: white; font-weight: 700;"><%= t("map.start_proposal") %></a>
+<div style="display:flex; flex-direction:row; justify-content: center; margin-top:2rem; gap:1rem;">
+  <a class="button button-secondary" href="/proposals/new" style="background-color: #05acec; color: white; font-weight: 700;"><%= t("layout.start_proposal") %></a>
+  <a class="button button-secondary" href="/legislation/processes/1/debate" style="background-color: #05a351; color: white; font-weight: 700;"><%= t("layout.start_debate") %></a>
 </div>
 <%= image_tag 'FARIIN-MAAL platform designs-04.png', style: "margin-top:2rem" %>
 

@@ -10,10 +10,17 @@ HEADER
 header {
   .top-links {
     background: $black;
+    color: $white;
   }
 }
 .top-bar {
   background: $white !important;
+  .menu-button {
+    color: $black;
+  }
+  .subnavigation {
+    color: $black;
+  }
 
   h1 {
     a img {
