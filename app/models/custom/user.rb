@@ -9,7 +9,6 @@ class User
     secondary
     bachelor
     diploma
-    masters
     phd
   ].freeze
 

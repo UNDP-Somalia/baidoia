@@ -15,7 +15,6 @@ en:
             secondary: Secondary
             bachelor: Bachelor
             diploma: Diploma
-            masters: Masters
             phd: PhD
           city_label: City Name
           city:
