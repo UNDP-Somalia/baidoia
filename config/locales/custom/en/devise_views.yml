@@ -11,10 +11,10 @@ en:
           last_education_degree:
             non: Non
             primary_elementary: Primary / Elementary
-            preparatory: Preparatory
             secondary: Secondary
-            bachelor: Bachelor
             diploma: Diploma
+            bachelor: Bachelor
+            master: Master Degree
             phd: PhD
           city_label: City Name
           city:

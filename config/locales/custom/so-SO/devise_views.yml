@@ -11,10 +11,10 @@ so:
           last_education_degree:
             non: Maya
             primary_elementary: Dugsi Hoose
-            preparatory: Dugsi Sare
             secondary: Heerka Koowaad Jaamacad
-            bachelor: Heerka Labaad Jaamacad
             diploma: Diblooma
+            bachelor: Heerka Labaad Jaamacad
+            master: Heerka Labaad Jaamacadda
             phd: PhD
           city_label: "Magaalada"
           city:

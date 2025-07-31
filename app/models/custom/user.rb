@@ -7,8 +7,9 @@ class User
     primary_elementary
     preparatory
     secondary
-    bachelor
     diploma
+    bachelor
+    master
     phd
   ].freeze
 
